@@ -7,3 +7,11 @@ __pycache__/
 **/evaluation_results
 **/ChatDev
 **log
+cleaned_repos/
+cleaned_repos-init/
+repos-init/
+cleaned_repos-test/
+outputs-test/
+outputs-init/
+models/
+cleaned_repos-test-req/

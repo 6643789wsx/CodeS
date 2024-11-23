@@ -1,5 +1,5 @@
 import utils
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 import os
@@ -19,28 +19,30 @@ If a question does not make any sense, or is not factually coherent, explain why
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--project", type=str, default=None)
-parser.add_argument("--repo_dir", type=str, default="../cleaned_repos")
+parser.add_argument("--repo_dir", type=str, default="/data/data_public/dtw_data/CodeS2/CodeS/cleaned_repos-test-req")
 parser.add_argument(
     "--output_dir",
     type=str,
-    default="../evaluation_results/from_scratch_inference_results",
+    default="/data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results",
 )
-parser.add_argument("--model", type=str, default=None)
+parser.add_argument("--model", type=str, default="/data/data_public/dtw_data/CodeS/models/Qwen2.5-Coder-init")
 
 args = parser.parse_args()
 
+model = AutoModelForCausalLM.from_pretrained(args.model, device_map="balanced_low_0")
 tokenizer = AutoTokenizer.from_pretrained(args.model)
 pipeline = transformers.pipeline(
     "text-generation",
-    model=args.model,
-    torch_dtype=torch.float16,
-    device_map="auto",
+    model=model,
+    tokenizer=tokenizer,
+    torch_dtype=torch.float16
 )
+dir_name = args.model.split("/")[-1]+"-test-req"
 
 for repo in [args.project] if args.project else os.listdir(args.repo_dir):
     if not os.path.exists(os.path.join(args.repo_dir, repo, "README.md")):
         continue
-    output_dir = os.path.join(args.output_dir, args.model.split("/")[-1], repo)
+    output_dir = os.path.join(args.output_dir, dir_name, repo)
     if not os.path.exists(output_dir):
         os.system(f"mkdir -p {output_dir}")
 

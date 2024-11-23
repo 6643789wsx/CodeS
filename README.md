@@ -48,8 +48,9 @@ bash run_step3_make_data.sh
 2. Start the training process:
 
 ```bash
-vim ./train/run_train_multi_gpu.sh
-bash ./train/run_train_multi_gpu.sh
+cd train
+vim run_train_multi_gpu.sh
+bash run_train_multi_gpu.sh
 ```
 
 ## Evaluation
@@ -58,16 +59,16 @@ bash ./train/run_train_multi_gpu.sh
 
 2. Perform inference on `SketchEval`:
 ```bash
-python ./codes/validation/evaluation-scripts/from_scratch_inference.py
+HF_ENDPOINT=https://hf-mirror.com python /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_scripts/from_scratch_inference.py
 ```
 
 3. Convert the inference results for the entire repository:
 ```bash
-python ./codes/validation/evaluation-scripts/transfer_output_to_repo.py
+HF_ENDPOINT=https://hf-mirror.com python /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_scripts/transfer_output_to_repo.py
 ```
 
 4. Evaluate the generated repository as with `CodeBLEU`:
 
 ```bash
-python ./codes/validation/evaluation-scripts/batch_eval/get_metric.py
+python /data/data_public/dtw_data/CodeS/validation/evaluation_scripts/batch_eval/batch_get_metric.py --output_dir /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results/transferred_repos --valid_dir /data/data_public/dtw_data/CodeS2/CodeS/cleaned_repos-test
 ```

@@ -1,7 +1,7 @@
 import json
 import os
 
-saved_name = "codes_train_data_v11_24.03.08.json"
+saved_name = "codes_train_data.json"
 max_lens_for_repo = 50
 code_data_size = 2000
 nl_data_size = 2000
@@ -15,7 +15,7 @@ nl_data_size = 2000
 #     input_ids = inputs["input_ids"]
 #     return len(input_ids)
 
-path = "/Users/zandaoguang/Desktop/Intern/huawei/codes/outputs"
+path = "/data/data_public/dtw_data/CodeS2/CodeS/outputs"
 new_data = []
 over_num = 0
 for root, dirs, files in os.walk(path):
@@ -44,7 +44,7 @@ for root, dirs, files in os.walk(path):
 print(f"over: {over_num}")
 print(f"saved: {len(new_data)}")
 
-saved_path = f"/Users/zandaoguang/Desktop/Intern/huawei/codes/training_data/{saved_name}"
+saved_path = f"/data/data_public/dtw_data/CodeS2/CodeS/train/data/{saved_name}"
 
 with open(saved_path, "w+") as file:
     json.dump(new_data, file, indent=4)
