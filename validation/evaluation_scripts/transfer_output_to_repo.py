@@ -8,9 +8,9 @@ import black
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--project", type=str, default=None)
-parser.add_argument("--input_dir", type=str, default="/data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results/Qwen2.5-Coder-init-test-req")
+parser.add_argument("--input_dir", type=str, default="/data/data_public/dtw_data/CodeS2/CodeS/validation/outputs-generate-jsonl")
 parser.add_argument(
-    "--output_dir", type=str, default="../evaluation_results/transferred_repos-test-req"
+    "--output_dir", type=str, default="/data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results/transferred_repos-generate-jsonl"
 )
 
 args = parser.parse_args()
