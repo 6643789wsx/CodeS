@@ -11,11 +11,11 @@ export NCCL_IB_DISABLE=1
 deepspeed --include localhost:0,1,2,3,4,5,6 --master_port=9901 /data/data_public/dtw_data/CodeS/train/src/train_bash.py \
     --deepspeed /data/data_public/dtw_data/CodeS/train/configs/ds_config_zero3.json \
     --stage sft \
-    --model_name_or_path /home/dtw/.cache/modelscope/hub/Qwen/Qwen2.5-Coder-0.5B \
+    --model_name_or_path /data/data_public/dtw_data/modelscop_hub/hub/AI-ModelScope/starcoder2-3b \
     --do_train True \
     --finetuning_type full \
     --template qwen \
-    --output_dir /data/data_public/dtw_data/CodeS2/CodeS/models/Qwen2.5-Coder \
+    --output_dir /data/data_public/dtw_data/CodeS2/CodeS/models/starcoder2-3b \
     --overwrite_output_dir \
     --dataset_dir data \
     --dataset codes \

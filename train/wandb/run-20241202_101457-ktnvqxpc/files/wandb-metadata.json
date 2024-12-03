@@ -1,0 +1,121 @@
+{
+  "os": "Linux-5.4.0-171-generic-x86_64-with-glibc2.31",
+  "python": "3.10.15",
+  "startedAt": "2024-12-02T02:14:57.850659Z",
+  "args": [
+    "--local_rank=0",
+    "--deepspeed",
+    "/data/data_public/dtw_data/CodeS/train/configs/ds_config_zero3.json",
+    "--stage",
+    "sft",
+    "--model_name_or_path",
+    "/data/data_public/dtw_data/modelscop_hub/hub/AI-ModelScope/starcoder2-3b",
+    "--do_train",
+    "True",
+    "--finetuning_type",
+    "full",
+    "--template",
+    "qwen",
+    "--output_dir",
+    "/data/data_public/dtw_data/CodeS2/CodeS/models/starcoder2-3b",
+    "--overwrite_output_dir",
+    "--dataset_dir",
+    "data",
+    "--dataset",
+    "codes",
+    "--learning_rate",
+    "5e-05",
+    "--per_device_train_batch_size",
+    "8",
+    "--gradient_accumulation_steps",
+    "8",
+    "--lr_scheduler_type",
+    "cosine",
+    "--num_train_epochs",
+    "5.0",
+    "--logging_steps",
+    "2",
+    "--save_steps",
+    "20",
+    "--fp16",
+    "True",
+    "--rope_scaling",
+    "linear",
+    "--plot_loss",
+    "True",
+    "--report_to",
+    "wandb"
+  ],
+  "program": "/data/data_public/dtw_data/CodeS/train/src/train_bash.py",
+  "git": {
+    "remote": "https://github.com/6643789wsx/CodeS",
+    "commit": "a376b4750fca61c6d80a532f79f9f7332c7f9432"
+  },
+  "email": "qaz6643789wsx@163.com",
+  "root": "/data/data_public/dtw_data/CodeS2/CodeS/train",
+  "host": "server.localdomain",
+  "username": "dtw",
+  "executable": "/home/dtw/.conda/envs/codes/bin/python",
+  "cpu_count": 56,
+  "cpu_count_logical": 112,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 7,
+  "disk": {
+    "/": {
+      "total": "878442569728",
+      "used": "546308833280"
+    }
+  },
+  "memory": {
+    "total": "269876396032"
+  },
+  "cpu": {
+    "count": 56,
+    "countLogical": 112
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.2"
+}
