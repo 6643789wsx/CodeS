@@ -70,5 +70,5 @@ HF_ENDPOINT=https://hf-mirror.com python /data/data_public/dtw_data/CodeS2/CodeS
 4. Evaluate the generated repository as with `CodeBLEU`:
 
 ```bash
-python /data/data_public/dtw_data/CodeS/validation/evaluation_scripts/batch_eval/batch_get_metric.py --output_dir /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results/transferred_repos --valid_dir /data/data_public/dtw_data/CodeS2/CodeS/cleaned_repos-test
+python /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_scripts/batch_eval/batch_get_metric.py --output_dir /data/data_public/dtw_data/CodeS2/CodeS/validation/evaluation_results/transferred_repos-v1 --valid_dir /data/data_public/dtw_data/CodeS2/CodeS/validation/cleaned_repos
 ```
